@@ -382,6 +382,37 @@ VALUES
 ---
 
 
+## 🧩 PARTE 4 - Alterando o banco de dados  
+
+Foram realizadas alterações nas tabelas e dados usando comandos de **ALTER TABLE** e **UPDATE**, com o objetivo de adicionar uma coluna que indica se o médico ainda está em atividade no hospital e atualizar alguns registros conforme o enunciado da atividade.
+
+A seguir, o script SQL utilizado.  
+O script completo também está disponível no arquivo **hospital-update-medicos.sql** deste repositório.
+
+```sql
+-- ==========================================================
+-- PARTE 4 - ALTERANDO O BANCO DE DADOS
+-- Adição e atualização de dados na tabela Medico
+-- ==========================================================
+
+-- Adicionar coluna 'em_atividade' para indicar se o médico ainda atua
+ALTER TABLE Medico
+ADD COLUMN em_atividade BOOLEAN DEFAULT TRUE;
+
+-- Atualizar dois médicos como inativos (FALSE)
+UPDATE Medico
+SET em_atividade = FALSE
+WHERE id_medico IN (2, 4);
+
+-- Manter os demais médicos em atividade (TRUE)
+UPDATE Medico
+SET em_atividade = TRUE
+WHERE id_medico NOT IN (2, 4);
+
+-- Verificar os resultados da atualização
+SELECT id_medico, nome, crm, em_atividade
+FROM Medico;
+```
 
 ## 🧠 Ferramentas Utilizadas
 
