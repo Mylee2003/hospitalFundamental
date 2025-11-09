@@ -664,5 +664,5 @@ Entre os principais aprendizados destacam-se:
 **Professor:** * [Gabriel Augusto](https://github.com/gabaugusto) *   
 **Curso:** Instituto PROA – Projeto de Banco de Dados
  
-**Curso:** *Instituto PROA – Projeto de Banco de Dados*  
+
 
